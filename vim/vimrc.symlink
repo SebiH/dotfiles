@@ -1,14 +1,14 @@
 " Plugins
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"call vundle#rc()
 execute pathogen#infect()
 
-Bundle 'gmarik/vundle'
-Bundle 'matchit.zip'
-Bundle 'The-NERD-Commenter'
-Bundle 'vim-powerline'
-Bundle 'Command-T'
-Bundle 'instant-markdown'
+"Bundle 'gmarik/vundle'
+"Bundle 'matchit.zip'
+"Bundle 'The-NERD-Commenter'
+"Bundle 'vim-powerline'
+"Bundle 'Command-T'
+"Bundle 'instant-markdown'
 
 " Plugin options
 let g:Powerline_symbols = 'unicode'
