@@ -1,3 +1,5 @@
+ZSH=$HOME/.oh-my-zsh
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -9,7 +11,7 @@ ZSH_THEME="arys"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git svn archlinux)
 
-source $ZSH/oh-my-zsh.sh
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # Start tmux
 # If not running interactively, do not do anything
@@ -26,7 +28,7 @@ SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/arys/.zshrc'
+zstyle :compinstall filename '/home/sebi/.zshrc'
 
 autoload -Uz compinit
 compinit
