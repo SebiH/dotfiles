@@ -3,9 +3,13 @@ alias reload!='. ~/.zshrc'
 #Modified commands
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias svn=colorsvn
+alias rsync='rsync --progress'
+alias weechat=weechat-curses
 
 #New commands
 alias ..='cd ..'
+alias open='xdg-open'
 
 #Privileged commands
 if [ $UID -ne 0 ]; then
@@ -16,11 +20,11 @@ if [ $UID -ne 0 ]; then
 fi
 
 #pacmatic aliases
-alias pac="sudo pacmatic -S"      # default action     
+alias pac="sudo pacman -S"      # default action     
 alias pacu="sudo pacmatic -Syu"   # '[u]pdate'         
-alias pacs="pacmatic -Ss"    # '[s]earch'        
+alias pacs="pacman -Ss"    # '[s]earch'        
 alias paci="pacmatic -Si"    # '[i]nfo'         
-alias pacr="sudo pacmatic -R"     # '[r]emove'       
+alias pacr="sudo pacman -R"     # '[r]emove'       
 alias pacl="pacmatic -Sl"    # '[l]ist'        
 alias pacll="pacmatic -Qqm"  # '[l]ist [l]ocal'   
 alias paclo="pacmatic -Qdt"  # '[l]ist [o]rphans' 
