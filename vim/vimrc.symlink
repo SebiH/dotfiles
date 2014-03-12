@@ -1,49 +1,102 @@
-" Plugins
-set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
+" pathogen
 execute pathogen#infect()
 
-"Bundle 'gmarik/vundle'
-"Bundle 'matchit.zip'
-"Bundle 'The-NERD-Commenter'
-"Bundle 'vim-powerline'
-"Bundle 'Command-T'
-"Bundle 'instant-markdown'
+" Powerline fix
+let $PYTHONPATH="/usr/lib/python3.3/site-packages"
+let g:Powerline_symbols = 'fancy'
 
-" Plugin options
-let g:Powerline_symbols = 'unicode'
-let g:CommandTMaxFiles=5000
-let g:CommandTMaxHeight=12
-map <C-o> :CommandT<CR>
-let g:CommandTAcceptSelectionMap = '<CR>'
-let g:CommandTCancelMap = '<C-g>'
+" rainbow parentheses
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
 
-" Show powerline on singlewindow
-set laststatus=2
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
 
-" Encoding
-set encoding=utf-8
+" Rainbow parentheses always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
-" Forget being compatible with good ol' vi
+" Key rebindings
+nmap <space> :
+
+" Smooth scroll
+noremap <silent> <c-g> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+
+" jj is never used -> jj > esc!
+inoremap jj <Esc>
+nnoremap JJJJ <Nop>
+
+" leader key
+let mapleader = ","
+
+" for learning
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" leader mappings
+" ,w creates a new vertical split and switches to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" open taglist quickly
+nnoremap <leader>t :TlistToggle<Return>
+
+
+" Enable more features
 set nocompatible
 
-" Get that filetype stuff happening
+" Filetypes
 filetype on
 filetype plugin on
 filetype indent on
+syntax enable
 
-" Turn on that syntax highlighting
-syntax on
-
-" Turn on 256 colors
+" Colors
 set t_Co=256
+"let g:solarized_termcolors=256
+set background=dark
+"colorscheme solarized
+colorscheme molokai
 
-" Why is this not a default
-set hidden
+" Tabsettings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
 
-" From PK3
-set showcmd
-set noswapfile
+" Indentation
+set autoindent
+set smartindent
 
 " Don't update the display while executing macros
 set lazyredraw
@@ -54,91 +107,42 @@ set showmode
 " Enable enhanced command-line completion. Presumes you have compiled
 " with +wildmenu.  See :help 'wildmenu'
 set wildmenu
+set wildmode=list:longest,full
 
-" Let's make it easy to edit this file (mnemonic for the key sequence is
-" 'e'dit 'v'imrc)
-nmap <silent> ,ev :e $MYVIMRC<cr>
+" Prevent additional files, for dropbox etc
+set noswapfile
+set nobackup
+set nu!
 
-" And to source this file as well (mnemonic for the key sequence is
-" 's'ource 'v'imrc)
-nmap <silent> ,sv :so $MYVIMRC<cr>
+" Status line 
+set laststatus=2
+"set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
-" ; == :
-nmap <space> :
+" turn of error bell
+set noerrorbells
+set visualbell
+set t_vb=
 
-" pdflatex compiling
-setlocal makeprg=pdflatex\ \-file\-line\-error\ \-interaction=nonstopmode\ $*\\\|\ grep\ \-E\ '\\w+:[0-9]{1,4}:\\\ ' 
-setlocal errorformat=%f:%l:\ %m
-" Autoselect compiler
-au BufRead * try | execute "compiler ".&filetype | catch /./ | endtry
-map <buffer> <F3> :w<CR>:make %<<CR>
-map <buffer> <F4> :!evince %<.pdf &<CR>
-map <silent> <F7> :cnext<CR> 
-map <silent> <F8> :clist<CR> 
-map <silent> <F10> \rr 
-let b:tex_flavor = 'pdflatex'
-" compiler tex
-map ,p :w<CR>:!pdflatex % &<CR> 
+" searching
+set hlsearch " highlight searchterms
+set incsearch " incremental search
+set ignorecase
+set smartcase
+set gdefault " :%s/foo/bar/g == :%s/foo/bar/
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
 
-" Tabsettings
-set tabstop=4
-set shiftwidth=4
-set expandtab
+" Other settings
+set encoding=utf-8 " encoding
+set number " linenumbers
+set showmatch " show matching braces
+set ruler " show where my cursor is
+set nohidden " remove buffer when tab is closed
+set showcmd " show command in status line
+set scrolloff=5 " keep 5 lines around cursor
+set wrap " softwrap long files
+set colorcolumn=80
 
-" custom
-set number
-colorscheme mono
-set autoindent
-set smartindent
-set showmatch
-set ruler
-"set nohls
-set incsearch
-set virtualedit=all
-set pastetoggle=<F2>
-set wildignore=*.swp,*.bak
-set hlsearch
-
-"Hide GUI bars
-set guioptions-=m 
-set guioptions-=T
-
-"Folding options
-set foldenable
-set foldmethod=marker
-map <Leader>f  :call CFold()<cr>
-
-"Folding functions
-function! CFoldLevel(lnum)
-  let line = getline(a:lnum)
-  if line =~ '^/\*'
-    return '>1' " A new fold of level 1 starts here.
-  else
-    return '1' " This line has a foldlevel of 1.
-  endif
-endfunction
-
-function! CFoldText()
-  " Look through all of the folded text for the function signature.
-  let signature = ''
-  let i = v:foldstart
-  while signature == '' && i < v:foldend
-    let line = getline(i)
-    if line =~ '\w\+(.*)$'
-      let signature = line
-    endif 
-    let i = i + 1
-  endwhile
-
-  " Return what the fold should show when folded.
-  return '+-- ' . (v:foldend - v:foldstart) . ' Lines: ' . signature . ' '
-endfunction
-
-function! CFold()               
-  set foldenable
-  set foldlevel=0   
-  set foldmethod=expr
-  set foldexpr=CFoldLevel(v:lnum)
-  set foldtext=CFoldText()
-  set foldnestmax=1
-endfunction
