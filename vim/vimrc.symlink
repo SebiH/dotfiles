@@ -41,22 +41,10 @@ nmap <space> :
 noremap <silent> <c-g> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
-" jj is never used -> jj > esc!
-inoremap jj <Esc>
-nnoremap JJJJ <Nop>
-
 " leader key
 let mapleader = ","
 
 " for learning
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 inoremap <F1> <ESC>
