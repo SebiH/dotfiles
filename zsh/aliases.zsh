@@ -15,7 +15,7 @@ alias open='xdg-open'
 if [ $UID -ne 0 ]; then
     alias sudo='sudo '
     alias scat='sudo cat'
-    alias svim='sudo vim'
+    alias svim='sudo -E vim'
     alias update='sudo pacmatic -Syu'
 fi
 
