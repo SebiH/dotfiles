@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/sebi/.vim'
-let g:netrw_dirhist_2='/home/sebi/.dotfiles/vim/vim.symlink'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/var/www/html/cybersite/web/public/libs/simple-line-icons'
+let g:netrw_dirhist_2='/var/www/html/cybersite/web/public/libs/angularjs/plugins/angular-block-ui'
+let g:netrw_dirhist_3='/var/www/html/cybersite/web/public/libs/angularjs/plugins/angular-block-ui/dist'

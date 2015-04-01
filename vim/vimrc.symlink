@@ -5,6 +5,9 @@ execute pathogen#infect()
 let $PYTHONPATH="/usr/lib/python3.3/site-packages"
 let g:Powerline_symbols = 'fancy'
 
+" javascript checker
+let g:syntastic_javascript_checkers = ['jshint']
+
 " rainbow parentheses
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -16,12 +19,12 @@ let g:rbpt_colorpairs = [
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['brown',       'firebrick3'],
     \ ['gray',        'RoyalBlue3'],
+    \ ['darkred',     'DarkOrchid3'],
     \ ['black',       'SeaGreen3'],
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['Darkblue',    'firebrick3'],
     \ ['darkgreen',   'RoyalBlue3'],
     \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
     \ ['red',         'firebrick3'],
     \ ]
 
@@ -33,6 +36,7 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParanthesesActivate
 
 " Key rebindings
 nmap <space> :
@@ -41,27 +45,25 @@ nmap <space> :
 noremap <silent> <c-g> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
-" jj is never used -> jj > esc!
-inoremap jj <Esc>
-nnoremap JJJJ <Nop>
-
 " leader key
 let mapleader = ","
 
 " for learning
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+" pasting
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+" current date
+let dateformat = "%Y-%m-%d"
+nnoremap <F6> "=strftime(dateformat)<CR>P
+inoremap <F6> <C-R>=strftime(dateformat)<CR>
 
 " leader mappings
 " ,w creates a new vertical split and switches to it
@@ -69,6 +71,10 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 " open taglist quickly
 nnoremap <leader>t :TlistToggle<Return>
+
+
+" Markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 
 " Enable more features
@@ -88,7 +94,7 @@ set background=dark
 colorscheme molokai
 
 " Tabsettings
-set tabstop=4
+set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -110,9 +116,10 @@ set wildmenu
 set wildmode=list:longest,full
 
 " Prevent additional files, for dropbox etc
-set noswapfile
-set nobackup
-set nu!
+" set noswapfile
+" set nobackup
+" set nu!
+set directory=~/.vimswp,~/tmp,/var/tmp,/tmp
 
 " Status line 
 set laststatus=2
@@ -144,5 +151,4 @@ set nohidden " remove buffer when tab is closed
 set showcmd " show command in status line
 set scrolloff=5 " keep 5 lines around cursor
 set wrap " softwrap long files
-set colorcolumn=80
 
