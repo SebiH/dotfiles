@@ -11,7 +11,7 @@ alias ..='cd ..'
 alias open='xdg-open'
 
 # Use neovim instead of vim, if possible
-command -v nvim >/dev/null 2>&1 && { echo >&2 "Using neovim!"; alias vim='nvim' }
+command -v nvim >/dev/null 2>&1 && { alias vim='nvim' }
 
 #Privileged commands
 if [ $UID -ne 0 ]; then
