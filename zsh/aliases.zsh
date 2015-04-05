@@ -10,9 +10,16 @@ alias rsync='rsync --progress'
 alias ..='cd ..'
 alias open='xdg-open'
 
+# Use neovim instead of vim, if possible
+command -v nvim >/dev/null 2>&1 && { echo >&2 "Using neovim!"; alias vim='nvim' }
+
 #Privileged commands
 if [ $UID -ne 0 ]; then
     alias sudo='sudo '
-    alias update='sudo pacmatic -Syu'
-    alias svim='sudo -E vim'
+
+    # Archlinux / app specific alias
+    if command -v pacmatic >/dev/null 2>&1; then alias update='sudo pacmatic -Syu '; fi
+
+    # use nivm if installed
+    if command -v nvim >/dev/null 2>&1; then alias svim='sudo -E nvim'; else alias svim='sudo -E vim'; fi
 fi
