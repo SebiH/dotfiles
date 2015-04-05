@@ -15,11 +15,11 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # Start tmux
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ $TERM != screen* ]] && exec tmux -2
+#[[ $- != *i* ]] && return
+#[[ $TERM != screen* ]] && exec tmux -2
 
 # Set color
-#[ "$TERM" = screen ] && export TERM=rxvt-256color
+export TERM=xterm-256color
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
