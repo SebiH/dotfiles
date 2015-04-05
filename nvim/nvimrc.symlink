@@ -1,153 +1,178 @@
-" pathogen
+" Plugins
+    call plug#begin('~/.nvim/plugged')
 
-" Powerline fix
-let $PYTHONPATH="/usr/lib/python3.3/site-packages"
-let g:Powerline_symbols = 'fancy'
+    Plug 'https://github.com/kien/rainbow_parentheses.vim'
+    Plug 'terryma/vim-smooth-scroll'
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'scrooloose/syntastic'
+    Plug 'tpope/vim-surround'
+    Plug 'bling/vim-airline'
+    Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+    Plug 'https://github.com/etaoins/vim-volt-syntax'
+    Plug 'vim-scripts/a.vim' 
 
-" javascript checker
-let g:syntastic_javascript_checkers = ['jshint']
+    call plug#end()
 
-" rainbow parentheses
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+" Rainbow Parantheses
+    " colours
+    let g:rbpt_colorpairs = [
+        \ ['brown',       'RoyalBlue3'],
+        \ ['Darkblue',    'SeaGreen3'],
+        \ ['darkgray',    'DarkOrchid3'],
+        \ ['darkgreen',   'firebrick3'],
+        \ ['darkcyan',    'RoyalBlue3'],
+        \ ['darkred',     'SeaGreen3'],
+        \ ['darkmagenta', 'DarkOrchid3'],
+        \ ['brown',       'firebrick3'],
+        \ ['gray',        'RoyalBlue3'],
+        \ ['darkred',     'DarkOrchid3'],
+        \ ['black',       'SeaGreen3'],
+        \ ['darkmagenta', 'DarkOrchid3'],
+        \ ['Darkblue',    'firebrick3'],
+        \ ['darkgreen',   'RoyalBlue3'],
+        \ ['darkcyan',    'SeaGreen3'],
+        \ ['red',         'firebrick3'],
+        \ ]
 
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
+    let g:rbpt_max = 16
+    let g:rbpt_loadcmd_toggle = 0
 
-" Rainbow parentheses always on
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-au Syntax * RainbowParanthesesActivate
+    " Autoload
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
+
+" Airline
+    let g:airline#extensions#branch#enabled    = 1
+    let g:airline#extensions#syntastic#enabled = 1
+    let g:airline#extensions#tabline#enabled   = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 " Key rebindings
-nmap <space> :
+    nmap <space> :
+
+    " leader key
+    let mapleader = ","
+
+    " for learning
+    nnoremap j gj
+    nnoremap k gk
+    inoremap <F1> <ESC>
+    nnoremap <F1> <ESC>
+    vnoremap <F1> <ESC>
+
+    " pasting
+    nnoremap <F2> :set invpaste paste?<CR>
+    set pastetoggle=<F2>
+    set showmode
+
+    " current date
+    let dateformat = "%Y-%m-%d"
+    nnoremap <F6> "=strftime(dateformat)<CR>P
+    inoremap <F6> <C-R>=strftime(dateformat)<CR>
+
+    " make escaping the terminal much easier
+    tnoremap <Esc> <c-\><c-n>
+
+    " leader mappings
+    " ,w creates a new vertical split and switches to it
+    nnoremap <leader>w <C-w>v<C-w>l
+
+
+" Plugin keys
+
+" NERDTree
+    nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
 " Smooth scroll
-noremap <silent> <c-g> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
-
-" leader key
-let mapleader = ","
-
-" for learning
-nnoremap j gj
-nnoremap k gk
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
-" pasting
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-set showmode
-
-" current date
-let dateformat = "%Y-%m-%d"
-nnoremap <F6> "=strftime(dateformat)<CR>P
-inoremap <F6> <C-R>=strftime(dateformat)<CR>
-
-" leader mappings
-" ,w creates a new vertical split and switches to it
-nnoremap <leader>w <C-w>v<C-w>l
-
-" open taglist quickly
-nnoremap <leader>t :TlistToggle<Return>
+    noremap <silent> <c-g> :call smooth_scroll#up(&scroll, 10, 4)<CR>
+    noremap <silent> <c-f> :call smooth_scroll#down(&scroll, 10, 4)<CR>
 
 
-" Markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 
-" Enable more features
-set nocompatible
+
+
+
+
+
+" Force Markdown syntax on md files
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 
 " Filetypes
-filetype on
-filetype plugin on
-filetype indent on
-syntax enable
+    filetype on
+    filetype plugin on
+    filetype indent on
+    syntax enable
 
-" Colors
-set t_Co=256
-"let g:solarized_termcolors=256
-set background=dark
-"colorscheme solarized
-colorscheme molokai
-
-" Tabsettings
-set tabstop=8
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set smarttab
+" Colorscheme
+    set t_Co=256
+    set background=dark
+    colorscheme molokai
 
 " Indentation
-set autoindent
-set smartindent
+    set tabstop=8
+    set softtabstop=4
+    set shiftwidth=4
+    set expandtab
+    set smarttab
+    set autoindent
+    set smartindent
 
-" Don't update the display while executing macros
-set lazyredraw
+" Don't update the display while executing macros 
+" -- Possibly outdated with neovim?
+" set lazyredraw
 
 " At least let yourself know what mode you're in
-set showmode
+    set showmode
 
 " Enable enhanced command-line completion. Presumes you have compiled
 " with +wildmenu.  See :help 'wildmenu'
-set wildmenu
-set wildmode=list:longest,full
+    set wildmenu
+    set wildmode=list:longest,full
 
 " Prevent additional files, for dropbox etc
-" set noswapfile
-" set nobackup
-" set nu!
-set directory=~/.vimswp,~/tmp,/var/tmp,/tmp
+    set directory=~/.vimswp,~/tmp,/var/tmp,/tmp
 
 " Status line 
-set laststatus=2
+    set laststatus=2
 "set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
-" turn of error bell
-set noerrorbells
-set visualbell
-set t_vb=
-
 " searching
-set hlsearch " highlight searchterms
-set incsearch " incremental search
-set ignorecase
-set smartcase
-set gdefault " :%s/foo/bar/g == :%s/foo/bar/
-nnoremap / /\v
-vnoremap / /\v
-nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
+    set hlsearch " highlight searchterms
+    set incsearch " incremental search
+    set ignorecase
+    set smartcase
+    set gdefault " :%s/foo/bar/g == :%s/foo/bar/
+    nnoremap / /\v
+    vnoremap / /\v
+    nnoremap <leader><space> :noh<cr>
+    nnoremap <tab> %
+    vnoremap <tab> %
 
 " Other settings
-set encoding=utf-8 " encoding
-set number " linenumbers
-set showmatch " show matching braces
-set ruler " show where my cursor is
-set nohidden " remove buffer when tab is closed
-set showcmd " show command in status line
-set scrolloff=5 " keep 5 lines around cursor
-set wrap " softwrap long files
+    set encoding=utf-8 " encoding
+    set number " linenumbers
+    set showmatch " show matching braces
+    set ruler " show where my cursor is
+    set nohidden " remove buffer when tab is closed
+    set showcmd " show command in status line
+    set scrolloff=5 " keep 5 lines around cursor
+    set wrap " softwrap long files
+    set backspace=2
 
