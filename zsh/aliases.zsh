@@ -1,5 +1,4 @@
 alias reload!='. ~/.zshrc'
-alias make=make_colour
 
 #Modified commands
 alias ls='ls --color=auto'
@@ -12,6 +11,7 @@ alias open='xdg-open'
 
 # Use neovim instead of vim, if possible
 command -v nvim >/dev/null 2>&1 && { alias vim='nvim' }
+command -v nvim >/dev/null 2>&1 && { alias vimdiff='nvim -d' }
 
 #Privileged commands
 if [ $UID -ne 0 ]; then
