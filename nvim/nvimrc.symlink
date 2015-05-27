@@ -171,9 +171,9 @@
     vnoremap <tab> %
 
 " Other settings
-    set encoding=utf-8 " encoding
+    set noshowmatch " don't jump to matching brackets when typing in brackets
+    set encoding=utf-8 " encoding 
     set number " linenumbers
-    set showmatch " show matching braces
     set ruler " show where my cursor is
     set nohidden " remove buffer when tab is closed
     set showcmd " show command in status line
