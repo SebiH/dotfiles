@@ -3,7 +3,7 @@
 
     Plug 'https://github.com/kien/rainbow_parentheses.vim'
     Plug 'terryma/vim-smooth-scroll'
-    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFocus'] }
     Plug 'scrooloose/nerdcommenter'
     Plug 'scrooloose/syntastic'
     Plug 'tpope/vim-surround'
@@ -102,7 +102,8 @@
 " Plugin keys
 
 " NERDTree
-    nnoremap <silent> <leader>t :NERDTreeToggle<CR>
+    nnoremap <silent> <leader>T :NERDTreeToggle<CR>
+    nnoremap <silent> <leader>t :NERDTreeFocus<CR>
 
 " Smooth scroll
     noremap <silent> <c-g> :call smooth_scroll#up(&scroll, 10, 4)<CR>
