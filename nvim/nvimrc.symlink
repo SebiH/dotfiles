@@ -17,6 +17,7 @@
     Plug 'kshenoy/vim-signature'
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'Yggdroot/indentLine'
+    Plug 'Raimondi/delimitMate'
 
     call plug#end()
 
@@ -105,17 +106,16 @@
 
 " Plugin keys
 
-" NERDTree
-    nnoremap <silent> <leader>T :NERDTreeToggle<CR>
-    nnoremap <silent> <leader>t :NERDTreeFocus<CR>
+    " NERDTree
+        nnoremap <silent> <leader>T :NERDTreeToggle<CR>
+        nnoremap <silent> <leader>t :NERDTreeFocus<CR>
 
-" Smooth scroll
-    noremap <silent> <c-g> :call smooth_scroll#up(&scroll, 10, 4)<CR>
-    noremap <silent> <c-f> :call smooth_scroll#down(&scroll, 10, 4)<CR>
+    " Smooth scroll
+        noremap <silent> <c-g> :call smooth_scroll#up(&scroll, 10, 4)<CR>
+        noremap <silent> <c-f> :call smooth_scroll#down(&scroll, 10, 4)<CR>
 
-
-
-
+    " DelimitMate
+        imap <C-c> <CR><Esc>O
 
 
 
