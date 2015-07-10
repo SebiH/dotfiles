@@ -16,6 +16,7 @@
     Plug 'Valloric/YouCompleteMe'
     Plug 'kshenoy/vim-signature'
     Plug 'NLKNguyen/papercolor-theme'
+    Plug 'Yggdroot/indentLine'
 
     call plug#end()
 
@@ -57,7 +58,9 @@
 " You Complete Me
     let g:ycm_autoclose_preview_window_after_insertion = 1
 
-
+" indentLine
+    let g:indentLine_color_term = 239
+    au VimEnter * IndentLinesEnable
 
 
 
