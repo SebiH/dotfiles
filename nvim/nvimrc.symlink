@@ -10,11 +10,12 @@
     Plug 'bling/vim-airline'
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'https://github.com/etaoins/vim-volt-syntax'
-    Plug 'vim-scripts/a.vim' 
+    Plug 'vim-scripts/a.vim'
     Plug 'marijnh/tern_for_vim'
     Plug 'othree/html5.vim'
     Plug 'Valloric/YouCompleteMe'
     Plug 'kshenoy/vim-signature'
+    Plug 'NLKNguyen/papercolor-theme'
 
     call plug#end()
 
@@ -137,7 +138,8 @@ endif
 " Colorscheme
     set t_Co=256
     set background=dark
-    colorscheme molokai
+    "colorscheme molokai
+    colorscheme PaperColor-Dark
 
 " Indentation
     set tabstop=8
@@ -148,7 +150,7 @@ endif
     set autoindent
     set smartindent
 
-" Don't update the display while executing macros 
+" Don't update the display while executing macros
 " -- Possibly outdated with neovim?
 " set lazyredraw
 
@@ -163,7 +165,7 @@ endif
 " Prevent additional files, for dropbox etc
     set directory=~/.vimswp,~/tmp,/var/tmp,/tmp
 
-" Status line 
+" Status line
     set laststatus=2
 "set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
@@ -181,7 +183,7 @@ endif
 
 " Other settings
     set noshowmatch " don't jump to matching brackets when typing in brackets
-    set encoding=utf-8 " encoding 
+    set encoding=utf-8 " encoding
     set number " linenumbers
     set ruler " show where my cursor is
     set nohidden " remove buffer when tab is closed
