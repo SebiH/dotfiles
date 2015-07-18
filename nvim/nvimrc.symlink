@@ -142,7 +142,7 @@ endif
     set t_Co=256
     set background=dark
     "colorscheme molokai
-    colorscheme PaperColor-Dark
+    colorscheme PaperColor
 
 " Indentation
     set tabstop=8
