@@ -18,6 +18,7 @@
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'Yggdroot/indentLine'
     Plug 'Raimondi/delimitMate'
+    Plug 'easymotion/vim-easymotion'
 
     call plug#end()
 
@@ -64,6 +65,9 @@
     au VimEnter * IndentLinesEnable
 
 
+" Easy Motion
+    " Turn on case insensitive feature
+    let g:EasyMotion_smartcase = 1
 
 
 
@@ -117,6 +121,15 @@
     " DelimitMate
         imap <C-c> <CR><Esc>O
 
+    " Easy Motion
+        nmap s <Plug>(easymotion-s2)
+        nmap t <Plug>(easymotion-t2)
+
+        map  / <Plug>(easymotion-sn)
+        omap / <Plug>(easymotion-tn)
+
+        map  n <Plug>(easymotion-next)
+        map  N <Plug>(easymotion-prev)
 
 
 
