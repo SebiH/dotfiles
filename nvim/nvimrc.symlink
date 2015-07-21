@@ -7,6 +7,7 @@
     Plug 'scrooloose/nerdcommenter'
     Plug 'scrooloose/syntastic'
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'
     Plug 'bling/vim-airline'
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'https://github.com/etaoins/vim-volt-syntax'
@@ -18,6 +19,7 @@
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'Yggdroot/indentLine'
     Plug 'Raimondi/delimitMate'
+    Plug 'godlygeek/tabular'
     Plug 'easymotion/vim-easymotion'
 
     call plug#end()
