@@ -138,7 +138,8 @@
 
     " Easy Motion
         nmap s <Plug>(easymotion-s2)
-        nmap t <Plug>(easymotion-t2)
+        nmap t <Plug>(easymotion-t)
+        omap t <Plug>(easymotion-t)
 
         map  / <Plug>(easymotion-sn)
         omap / <Plug>(easymotion-tn)
