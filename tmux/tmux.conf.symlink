@@ -35,3 +35,8 @@ set-option -g display-panes-colour colour166 #orange
 
 # clock
 set-window-option -g clock-mode-colour colour64 #green
+
+# Needed to prevent weirdness in neovim.
+# https://github.com/neovim/neovim/issues/2035
+set -sg escape-time 10
+
