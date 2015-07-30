@@ -15,7 +15,7 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # Start tmux
 # If not running interactively, do not do anything
-#[[ $- != *i* ]] && return
+[[ $- != *i* ]] && return
 [[ $TERM != screen* ]] && exec tmux -2
 
 # Set color
