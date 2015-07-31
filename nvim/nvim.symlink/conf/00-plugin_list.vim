@@ -20,6 +20,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
