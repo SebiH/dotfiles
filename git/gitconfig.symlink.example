@@ -21,7 +21,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = "command -v nvim >/dev/null 2>&1 && ED='nvim' || ED='vim'; $ED"
 [apply]
         whitespace = nowarn
 [mergetool]
