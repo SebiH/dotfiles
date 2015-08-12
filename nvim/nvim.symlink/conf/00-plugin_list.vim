@@ -1,6 +1,5 @@
 call plug#begin('~/.nvim/plugged')
 
-Plug 'luochen1990/rainbow'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFocus'] }
 Plug 'scrooloose/nerdcommenter'
