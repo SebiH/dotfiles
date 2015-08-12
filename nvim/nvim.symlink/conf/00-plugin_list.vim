@@ -20,6 +20,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'joonty/vdebug', { 'for': 'php' }
 
 call plug#end()
 
