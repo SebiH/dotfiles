@@ -9,6 +9,8 @@
 " indentLine
     let g:indentLine_color_term = 239
     au VimEnter * IndentLinesEnable
+    " Don't interfere with vim-json's concealing
+    let g:indentLine_noConcealCursor=""
 
 
 " Easy Motion
