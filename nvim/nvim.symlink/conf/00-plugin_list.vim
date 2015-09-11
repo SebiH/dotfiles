@@ -22,5 +22,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'joonty/vdebug', { 'for': 'php' }
 
+Plug 'vim-scripts/AutomaticLaTexPlugin', { 'for': 'tex' }
+Plug 'vim-latex/vim-latex'
+
 call plug#end()
 
