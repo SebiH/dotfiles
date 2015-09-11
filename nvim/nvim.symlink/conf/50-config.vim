@@ -44,6 +44,9 @@ endif
     set laststatus=2
 "set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
+" Expand %% to directory of current buffer
+    cabbr <expr> %% expand('%:p:h')
+
 " searching
     set hlsearch " highlight searchterms
     set incsearch " incremental search
