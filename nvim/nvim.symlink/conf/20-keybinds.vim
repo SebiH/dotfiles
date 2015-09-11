@@ -38,9 +38,11 @@
     nnoremap <leader><space> :noh<cr>
 
 
-" NERDTree
-    nnoremap <silent> <leader>T :NERDTreeToggle<CR>
-    nnoremap <silent> <leader>t :NERDTreeFocus<CR>
+" NERDTree & TagList
+    nnoremap <silent> <leader>T :TlistClose<CR> :NERDTreeToggle<CR>
+    nnoremap <silent> <leader>t :TlistClose<CR> :NERDTreeFocus<CR>
+    nnoremap <silent> <leader>r :NERDTreeClose<CR> :TlistOpen<CR>
+    nnoremap <silent> <leader>T :NERDTreeClose<CR> :TlistToggle<CR>
 
 " Smooth scroll
     noremap <silent> <c-g> :call smooth_scroll#up(&scroll, 10, 4)<CR>

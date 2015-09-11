@@ -1,7 +1,7 @@
 call plug#begin('~/.nvim/plugged')
 
 Plug 'terryma/vim-smooth-scroll'
-Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFocus'] }
+Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTreeClose'] }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
@@ -21,6 +21,7 @@ Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'joonty/vdebug', { 'for': 'php' }
+Plug 'taglist.vim', { 'on': ['TlistToggle', 'TlistOpen', 'TlistClose'] }
 
 Plug 'vim-scripts/AutomaticLaTexPlugin', { 'for': 'tex' }
 Plug 'vim-latex/vim-latex'
