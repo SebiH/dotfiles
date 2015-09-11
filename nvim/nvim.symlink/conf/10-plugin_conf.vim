@@ -12,6 +12,18 @@
     " Don't interfere with vim-json's concealing
     let g:indentLine_noConcealCursor=""
 
+" Tagbar
+    " Markdown support
+    let g:tagbar_type_markdown = {
+            \ 'ctagstype' : 'markdown',
+            \ 'kinds' : [
+                \ 'h:headings',
+                \ 'l:links',
+                \ 'i:images'
+            \ ],
+        \ "sort" : 0
+    \ }
+
 
 " Easy Motion
     " Turn on case insensitive feature
