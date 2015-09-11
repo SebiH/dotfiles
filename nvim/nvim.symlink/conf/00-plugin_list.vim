@@ -21,7 +21,7 @@ Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'joonty/vdebug', { 'for': 'php' }
-Plug 'taglist.vim', { 'on': ['TlistToggle', 'TlistOpen', 'TlistClose'] }
+Plug 'majutsushi/tagbar'
 
 Plug 'vim-scripts/AutomaticLaTexPlugin', { 'for': 'tex' }
 Plug 'vim-latex/vim-latex'
