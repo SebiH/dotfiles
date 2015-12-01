@@ -23,9 +23,5 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'joonty/vdebug', { 'for': 'php' }
 Plug 'majutsushi/tagbar'
 
-Plug 'vim-scripts/AutomaticLaTexPlugin', { 'for': 'tex' }
-Plug 'vim-latex/vim-latex', { 'for': 'tex' }
-Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
-
 call plug#end()
 
