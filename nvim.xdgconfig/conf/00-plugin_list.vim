@@ -23,6 +23,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'joonty/vdebug', { 'for': 'php' }
 Plug 'majutsushi/tagbar'
+Plug 'Shougo/unite.vim'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
