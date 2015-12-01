@@ -11,9 +11,9 @@ Plug 'bling/vim-airline'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'https://github.com/etaoins/vim-volt-syntax'
 Plug 'vim-scripts/a.vim'
-Plug 'marijnh/tern_for_vim'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/html5.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'kshenoy/vim-signature'
 Plug 'nanotech/jellybeans.vim'
 Plug 'Yggdroot/indentLine'
