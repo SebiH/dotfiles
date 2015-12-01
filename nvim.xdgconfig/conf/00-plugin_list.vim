@@ -7,6 +7,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'benekastah/neomake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'https://github.com/etaoins/vim-volt-syntax'
