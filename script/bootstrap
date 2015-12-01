@@ -60,9 +60,14 @@ install_dotfiles () {
   backup_all=false
   skip_all=false
 
-  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
+  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink -o -name \*.xdgconfig`
   do
-    dest="$HOME/.`basename \"${source%.*}\"`"
+    if [[ $source == *.symlink ]]
+    then
+        dest="$HOME/.`basename \"${source%.*}\"`"
+    else
+        dest="$HOME/.config/`basename \"${source%.*}\"`"
+    fi
 
     if [ -f $dest ] || [ -d $dest ]
     then
