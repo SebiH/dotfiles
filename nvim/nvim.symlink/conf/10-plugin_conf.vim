@@ -6,6 +6,10 @@
 " You Complete Me
     let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" Neomake
+    " active linter on save
+    autocmd! BufWritePost * Neomake
+
 " indentLine
     let g:indentLine_color_term = 239
     au VimEnter * IndentLinesEnable

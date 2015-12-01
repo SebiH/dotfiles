@@ -3,7 +3,8 @@ call plug#begin('~/.nvim/plugged')
 Plug 'terryma/vim-smooth-scroll'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTreeClose'] }
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
