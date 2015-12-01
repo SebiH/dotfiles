@@ -1,5 +1,5 @@
 " Load all config files
-for f in split(glob('~/.nvim/conf/*.vim'), '\n')
+for f in split(glob('~/.config/nvim/conf/*.vim'), '\n')
     exe 'source' f
 endfor
 
