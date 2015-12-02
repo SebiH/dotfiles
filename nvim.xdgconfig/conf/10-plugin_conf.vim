@@ -11,6 +11,10 @@
     " active linter on save
     autocmd! BufWritePost * Neomake
 
+" Deoplete
+    " enable
+    let g:deoplete#enable_at_startup = 1
+
 " indentLine
     let g:indentLine_color_term = 239
     au VimEnter * IndentLinesEnable

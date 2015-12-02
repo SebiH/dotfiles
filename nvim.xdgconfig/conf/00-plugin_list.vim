@@ -14,7 +14,7 @@ Plug 'https://github.com/etaoins/vim-volt-syntax'
 Plug 'vim-scripts/a.vim'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/html5.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'kshenoy/vim-signature'
 Plug 'nanotech/jellybeans.vim'
 Plug 'Yggdroot/indentLine'
@@ -25,6 +25,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'joonty/vdebug', { 'for': 'php' }
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
