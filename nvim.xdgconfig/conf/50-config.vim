@@ -8,10 +8,6 @@ endif
 " Force Markdown syntax on md files
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-" Different indent for web-development
-    autocmd FileType html setlocal shiftwidth=2 tabstop=2
-    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-
 " Filetypes
     filetype on
     filetype plugin on
