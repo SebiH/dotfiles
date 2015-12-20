@@ -54,8 +54,6 @@
     imap <C-c> <CR><Esc>O
 
 " Easy Motion
-    nmap s <Plug>(easymotion-s2)
-
     map  / <Plug>(easymotion-sn)
     omap / <Plug>(easymotion-tn)
 
