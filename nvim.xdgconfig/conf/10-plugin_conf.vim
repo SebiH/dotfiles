@@ -33,12 +33,3 @@
         \ "sort" : 0
     \ }
 
-
-" Easy Motion
-    " Turn on case insensitive feature
-    let g:EasyMotion_smartcase = 1
-    " keep cursor colum when JK motion
-    let g:EasyMotion_startofline = 0
-    " Smartsign (type `3` and match `3`&`#`)
-    let g:EasyMotion_use_smartsign_us = 1
-

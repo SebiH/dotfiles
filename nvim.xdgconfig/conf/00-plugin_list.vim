@@ -20,7 +20,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
-Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'joonty/vdebug', { 'for': 'php' }
 Plug 'majutsushi/tagbar'
