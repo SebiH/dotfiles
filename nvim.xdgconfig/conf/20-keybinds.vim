@@ -24,9 +24,9 @@
     " make escaping the terminal much easier
     tnoremap <Esc> <c-\><c-n>
 
-    " Searching (disabled: overwritten by EasyMotion)
-    "nnoremap / /\v
-    "vnoremap / /\v
+    " Searching
+    nnoremap / /\v
+    vnoremap / /\v
 
     nnoremap <tab> %
     vnoremap <tab> %
@@ -52,17 +52,4 @@
 
 " DelimitMate
     imap <C-c> <CR><Esc>O
-
-" Easy Motion
-    map  / <Plug>(easymotion-sn)
-    omap / <Plug>(easymotion-tn)
-
-    map  n <Plug>(easymotion-next)
-    map  N <Plug>(easymotion-prev)
-
-    map <Leader>l <Plug>(easymotion-lineforward)
-    map <Leader>j <Plug>(easymotion-j)
-    map <Leader>k <Plug>(easymotion-k)
-    map <Leader>h <Plug>(easymotion-linebackward)
-
 
