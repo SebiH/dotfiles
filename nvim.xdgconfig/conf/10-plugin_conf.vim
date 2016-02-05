@@ -5,15 +5,15 @@
     let g:airline#extensions#tabline#enabled   = 1
 
 " You Complete Me
-    let g:ycm_autoclose_preview_window_after_insertion = 1
+    "let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Neomake
     " active linter on save
-    autocmd! BufWritePost * Neomake
+    "autocmd! BufWritePost * Neomake
 
 " Deoplete
     " enable
-    let g:deoplete#enable_at_startup = 1
+    "let g:deoplete#enable_at_startup = 1
 
 " indentLine
     let g:indentLine_color_term = 239
