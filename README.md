@@ -15,6 +15,7 @@ Currently contains configuration files for the following applications:
 - neovim
 - vim
 - tmux
+- sublime text 3
 - zsh
 
 ## components
