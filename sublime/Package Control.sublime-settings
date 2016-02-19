@@ -1,0 +1,18 @@
+{
+    "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
+    "installed_packages":
+    [
+        "GitCommitMsg",
+        "HexViewer",
+        "Markdown Preview",
+        "MarkdownEditing",
+        "Material Theme",
+        "MIPS Syntax",
+        "Package Control",
+        "TypeScript"
+    ]
+}
+
