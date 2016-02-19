@@ -1,5 +1,4 @@
-# Sample gitconfig
-#
+# Default gitconfig
 
 [hub]
         protocol = https
@@ -10,10 +9,7 @@
         helper = GIT_CREDENTIAL_HELPER
 [alias]
         co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
-        count   = !git shortlog -sn
+        dt = difftool
 [color]
         diff = auto
         status = auto
@@ -21,14 +17,20 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = "command -v nvim >/dev/null 2>&1 && ED='nvim' || ED='vim'; $ED"
+	editor = default-vim
 [apply]
         whitespace = nowarn
 [mergetool]
         keepBackup = false
+	path = default-vim
 [difftool]
         prompt = false
 [help]
         autocorrect = 1
 [push]
-        default = current
+	default = current
+[diff]
+        tool = customvim
+[difftool "customvim"]
+        cmd = "default-vim -R -f -d \"$LOCAL\" \"$REMOTE\""
+
