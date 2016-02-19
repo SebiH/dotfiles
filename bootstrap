@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
 # bootstrap installs things.
+# Adapted from https://github.com/holman/dotfiles
 
 DOTFILES_ROOT="`pwd`"
 
