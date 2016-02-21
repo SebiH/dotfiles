@@ -123,7 +123,7 @@ install_dotfiles () {
 }
 
 setup_keys () {
-    keys=(PUSHBULLET_API SLACK_API)
+    keys=(PUSHBULLET_API SLACK_WEBHOOK SLACK_BOTNAME SLACK_BOTICON)
 
     for key in ${keys[@]}
     do
