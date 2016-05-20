@@ -1,5 +1,6 @@
 " NeoVim standard bindings
     nmap <space> :
+    vmap <space> :
 
     " leader key
     let mapleader = ","
