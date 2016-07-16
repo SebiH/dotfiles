@@ -4,6 +4,7 @@
 # Adapted from https://github.com/holman/dotfiles
 
 DOTFILES_ROOT="`pwd`"
+cd $DOTFILES_ROOT
 
 set -e
 
