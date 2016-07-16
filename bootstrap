@@ -6,6 +6,8 @@
 DOTFILES_ROOT="`pwd`"
 cd $DOTFILES_ROOT
 
+mkdir ~/.config/ >/dev/null 2>&1
+
 set -e
 
 echo ''
