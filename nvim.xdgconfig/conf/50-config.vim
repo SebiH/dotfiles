@@ -3,6 +3,8 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" nvim 0.2 command live feedback
+:set inccommand=split
 
 
 " Force Markdown syntax on md files
