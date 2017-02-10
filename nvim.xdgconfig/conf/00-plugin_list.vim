@@ -5,7 +5,7 @@ call plug#begin('~/.config/nvim_plugged/')
 "
 
 " Theme
-Plug 'nanotech/jellybeans.vim'
+Plug 'dikiaap/minimalist'
 
 " Smooth ctrl-j scrolling
 Plug 'terryma/vim-smooth-scroll'
