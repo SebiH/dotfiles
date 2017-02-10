@@ -87,5 +87,30 @@ Plug 'majutsushi/tagbar'
 
 
 
+"
+"   Text writing
+"
+
+" Hide everything but text
+Plug 'junegunn/goyo.vim', { 'for': ['plaintex', 'text', 'markdown'] }
+
+" Fade out non-active paragraphs
+Plug 'junegunn/limelight.vim', { 'for': ['plaintex', 'text', 'markdown'] }
+
+" Cycle through different text-specific characters (-.'")
+Plug 'vim-scripts/UniCycle', { 'for': ['plaintex', 'text', 'markdown'] }
+
+" Better support for typographic quotes
+Plug 'reedes/vim-textobj-quote', { 'for': ['plaintex', 'text', 'markdown'] }
+
+" Offer synonyms
+"Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'text', 'markdown'] }
+
+" Spellchecking
+Plug 'rhysd/vim-grammarous', { 'for': ['plaintex', 'text', 'markdown'] }
+
+" Spellchecking 2
+Plug 'dpelle/vim-LanguageTool', { 'for': ['plaintex', 'text', 'markdown'] }
+
 call plug#end()
 
