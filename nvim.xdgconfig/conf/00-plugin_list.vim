@@ -1,4 +1,4 @@
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim_plugged/')
 
 Plug 'terryma/vim-smooth-scroll'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTreeClose'] }
@@ -27,6 +27,8 @@ Plug 'majutsushi/tagbar'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'terryma/vim-multiple-cursors'
+
+Plug '', { 'for': '' }
 
 call plug#end()
 
