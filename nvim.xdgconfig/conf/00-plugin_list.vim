@@ -91,26 +91,23 @@ Plug 'majutsushi/tagbar'
 "   Text writing
 "
 
+function! SetupThesaurus(info)
+    if a:info.status == 'installed' || a:info.force
+        !wget https://www.gutenberg.org/files/3202/files/mthesaur.txt
+    endif
+endfunction
+
 " Hide everything but text
 Plug 'junegunn/goyo.vim', { 'for': ['plaintex', 'text', 'markdown'] }
 
 " Fade out non-active paragraphs
 Plug 'junegunn/limelight.vim', { 'for': ['plaintex', 'text', 'markdown'] }
 
-" Cycle through different text-specific characters (-.'")
-Plug 'vim-scripts/UniCycle', { 'for': ['plaintex', 'text', 'markdown'] }
-
 " Better support for typographic quotes
 Plug 'reedes/vim-textobj-quote', { 'for': ['plaintex', 'text', 'markdown'] }
 
 " Offer synonyms
-"Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'text', 'markdown'] }
-
-" Spellchecking
-Plug 'rhysd/vim-grammarous', { 'for': ['plaintex', 'text', 'markdown'] }
-
-" Spellchecking 2
-Plug 'dpelle/vim-LanguageTool', { 'for': ['plaintex', 'text', 'markdown'] }
+Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'text', 'markdown'], 'do': function('SetupThesaurus') }
 
 call plug#end()
 

@@ -54,3 +54,7 @@
 " DelimitMate
     imap <C-c> <CR><Esc>O
 
+" Thesaurus_query
+    nnoremap <unique><silent> <Leader>ss :ThesaurusQueryReplaceCurrentWord<CR>
+    vnoremap <unique><silent> <Leader>ss "ky:ThesaurusQueryReplace <C-r>k<CR>
+
