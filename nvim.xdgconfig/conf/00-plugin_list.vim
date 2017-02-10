@@ -1,34 +1,91 @@
 call plug#begin('~/.config/nvim_plugged/')
 
-Plug 'terryma/vim-smooth-scroll'
-Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTreeClose'] }
-Plug 'scrooloose/nerdcommenter'
-" Plug 'scrooloose/syntastic'
-Plug 'benekastah/neomake'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-unimpaired'
-Plug 'bling/vim-airline'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'https://github.com/etaoins/vim-volt-syntax'
-Plug 'vim-scripts/a.vim'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'othree/html5.vim'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'kshenoy/vim-signature'
+"
+"   General
+"
+
+" Theme
 Plug 'nanotech/jellybeans.vim'
+
+" Smooth ctrl-j scrolling
+Plug 'terryma/vim-smooth-scroll'
+
+" Better file navigation sidebar
+Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTreeClose'] }
+
+" Manage surrounding brackets
+Plug 'tpope/vim-surround'
+
+" Extended repeat (.) support for additional commands
+Plug 'tpope/vim-repeat'
+
+" Git support
+Plug 'tpope/vim-fugitive'
+
+" Extended bracket commands, e.g. ]e [e
+Plug 'tpope/vim-unimpaired'
+
+" Status line
+Plug 'bling/vim-airline'
+
+" Display vim marks
+Plug 'kshenoy/vim-signature'
+
+" Display indentation lines
 Plug 'Yggdroot/indentLine'
+
+" Autoclose brackets/quotes etc
 Plug 'Raimondi/delimitMate'
+
+" Text alignment via :Tab /<sign>
 Plug 'godlygeek/tabular'
+
+" Easier tmux window navigation
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'joonty/vdebug', { 'for': 'php' }
-Plug 'majutsushi/tagbar'
-Plug 'Shougo/unite.vim'
+
+" Search & display info from arbitrary sources, via :Unite
+Plug 'Shougo/denite.nvim'
+
+" Async keyword completion
 Plug 'Shougo/deoplete.nvim'
+
+" Multiple cursors like in sublime text
 Plug 'terryma/vim-multiple-cursors'
 
-Plug '', { 'for': '' }
+
+
+"
+"   Code
+"
+
+" (PHP) Debugger
+Plug 'joonty/vdebug', { 'for': 'php' }
+
+" Toggle comments via <leader>cc etc
+Plug 'scrooloose/nerdcommenter'
+
+" Async compilation for neovim
+Plug 'benekastah/neomake'
+
+" Better HTML5 support
+Plug 'othree/html5.vim', { 'for': 'html' }
+
+" Volt syntax for PhalconPHP
+Plug 'https://github.com/etaoins/vim-volt-syntax'
+
+" Better JS support
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
+" JS autocomplete and more
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+
+" Switch between header & source file
+Plug 'vim-scripts/a.vim', { 'for': ['c', 'cpp'] }
+
+" Sidebar for ctags generated tags
+Plug 'majutsushi/tagbar'
+
+
 
 call plug#end()
 
