@@ -33,9 +33,6 @@
     vnoremap <tab> %
 
     " leader mappings
-    " ,w creates a new vertical split and switches to it
-    nnoremap <leader>w <C-w>v<C-w>l
-
     nnoremap <leader><space> :noh<cr>
 
 
@@ -57,4 +54,7 @@
 " Thesaurus_query
     nnoremap <unique><silent> <Leader>ss :ThesaurusQueryReplaceCurrentWord<CR>
     vnoremap <unique><silent> <Leader>ss "ky:ThesaurusQueryReplace <C-r>k<CR>
+
+" Wordy
+    nnoremap <leader>w :Wordy<space>
 

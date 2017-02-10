@@ -106,6 +106,9 @@ Plug 'junegunn/limelight.vim', { 'for': ['plaintex', 'text', 'markdown'] }
 " Better support for typographic quotes
 Plug 'reedes/vim-textobj-quote', { 'for': ['plaintex', 'text', 'markdown'] }
 
+" Uncover usage problems in writing
+Plug 'reedes/vim-wordy', { 'for': ['plaintex', 'text', 'markdown'] }
+
 " Offer synonyms
 Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'text', 'markdown'], 'do': function('SetupThesaurus') }
 
