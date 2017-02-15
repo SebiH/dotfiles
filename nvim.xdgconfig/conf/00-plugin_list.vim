@@ -98,19 +98,19 @@ function! SetupThesaurus(info)
 endfunction
 
 " Hide everything but text
-Plug 'junegunn/goyo.vim', { 'for': ['plaintex', 'text', 'markdown'] }
+Plug 'junegunn/goyo.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 
 " Fade out non-active paragraphs
-Plug 'junegunn/limelight.vim', { 'for': ['plaintex', 'text', 'markdown'] }
+Plug 'junegunn/limelight.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 
 " Better support for typographic quotes
-Plug 'reedes/vim-textobj-quote', { 'for': ['plaintex', 'text', 'markdown'] }
+Plug 'reedes/vim-textobj-quote', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 
 " Uncover usage problems in writing
-Plug 'reedes/vim-wordy', { 'for': ['plaintex', 'text', 'markdown'] }
+Plug 'reedes/vim-wordy', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 
 " Offer synonyms
-Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'text', 'markdown'], 'do': function('SetupThesaurus') }
+Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown'], 'do': function('SetupThesaurus') }
 
 call plug#end()
 
