@@ -63,3 +63,8 @@
     " Auto-activate
     autocmd! User goyo.vim execute 'Goyo' min([&columns / 2, 140]) + 'x90%'
 
+" LaTeX-Box
+    " Options
+    let g:LatexBox_latexmk_async = 1
+    let g:LatexBox_latexmk_preview_continuously = 1
+

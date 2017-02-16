@@ -55,6 +55,6 @@
     nnoremap <unique><silent> <Leader>ss :ThesaurusQueryReplaceCurrentWord<CR>
     vnoremap <unique><silent> <Leader>ss "ky:ThesaurusQueryReplace <C-r>k<CR>
 
-" Wordy
-    nnoremap <leader>w :Wordy<space>
+" LaTeX-Box
+    nnoremap <unique><silent> <Leader>l :LatexTOC<CR>
 

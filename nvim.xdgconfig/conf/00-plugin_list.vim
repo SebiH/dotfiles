@@ -112,5 +112,8 @@ Plug 'reedes/vim-wordy', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 " Offer synonyms
 Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown'], 'do': function('SetupThesaurus') }
 
+" Latex syntax, compiling etc
+Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['plaintex', 'tex'] }
+
 call plug#end()
 
