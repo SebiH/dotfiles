@@ -54,6 +54,9 @@
     endfunction
 
     function! s:goyo_leave()
+        " TODO: only works if cwd is directory of file
+        !rm *.fls
+        LatexmkClean
         q
     endfunction
 
