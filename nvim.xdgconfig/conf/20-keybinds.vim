@@ -58,3 +58,9 @@
 " LaTeX-Box
     nnoremap <unique><silent> <Leader>l :LatexTOC<CR>
 
+" vim-fugitive (git)
+    nmap <leader>gs :Gstatus<cr>
+    nmap <leader>gc :Gcommit<cr>
+    nmap <leader>ga :Gwrite<cr>
+    nmap <leader>gd :Gdiff<cr>
+
