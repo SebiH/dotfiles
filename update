@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# update repository (because i can't remember the git submodule command)
+git pull && git submodule update --init --recursive
+
