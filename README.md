@@ -24,7 +24,7 @@ Since this is inspired by [Zach Holman's dotfiles](https://github.com/holman/dot
 there are a few special rules:
 
 - **/bin**: Is added to `$PATH`, commands in there will therefore be globally available
-- **\*/\*.zsh** Will be loaded into the zsh environment, regardless of location
+- **\*/\*.zsh** Will be loaded into the zsh environment
 - **\*/path.zsh**: Any file named `path.zsh` is loaded first and is
   expected to setup `$PATH` or similar.
 - **\*/completion.zsh**: Any file named `completion.zsh` is loaded
