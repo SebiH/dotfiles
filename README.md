@@ -3,7 +3,7 @@
 ## installation
 
 ```sh
-git clone https://github.com/SebiH/dotfiles.git ~/.dotfiles && ~/.dotfiles/bootstrap
+git clone --recursive https://github.com/SebiH/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./bootstrap
 ```
 
 ## content
