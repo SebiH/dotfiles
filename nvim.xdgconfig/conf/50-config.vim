@@ -40,6 +40,8 @@ endif
 
 " Prevent additional files, for dropbox etc
     set directory=~/.vimswp,~/tmp,/var/tmp,/tmp
+    set noswapfile
+    set nobackup
 
 " Status line
     set laststatus=2
