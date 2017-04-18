@@ -15,8 +15,8 @@
 " indentLine
     let g:indentLine_color_term = 239
     au VimEnter * IndentLinesEnable
-    " Don't interfere with vim-json's concealing
-    let g:indentLine_noConcealCursor=""
+    let g:indentLine_concealcursor=''
+    let g:indentLine_conceallevel = 1
 
 " Tagbar
     " Markdown support
