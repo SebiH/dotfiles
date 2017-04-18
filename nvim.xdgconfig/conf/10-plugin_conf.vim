@@ -47,25 +47,6 @@
     " Auto activate
     autocmd! User limelight.vim Limelight
 
-" Goyo
-    " Custom enter/leave
-    function! s:goyo_enter()
-        " Custom functions here
-    endfunction
-
-    function! s:goyo_leave()
-        " TODO: only works if cwd is directory of file
-        !rm *.fls
-        LatexmkClean
-        q
-    endfunction
-
-    autocmd! User GoyoEnter nested call <SID>goyo_enter()
-    autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-    " Auto-activate
-    autocmd! User goyo.vim execute 'Goyo' min([&columns / 2, 140]) + 'x90%'
-
 " LaTeX-Box
     " Options
     let g:LatexBox_latexmk_async = 1
