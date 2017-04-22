@@ -52,6 +52,9 @@ Plug 'Shougo/deoplete.nvim'
 " Multiple cursors like in sublime text
 Plug 'terryma/vim-multiple-cursors'
 
+" Fuzzy search
+Plug 'ctrlpvim/ctrlp.vim'
+
 
 
 "
@@ -98,10 +101,10 @@ function! SetupThesaurus(info)
 endfunction
 
 " Hide everything but text
-Plug 'junegunn/goyo.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
+Plug 'junegunn/goyo.vim' ", { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 
 " Fade out non-active paragraphs
-Plug 'junegunn/limelight.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
+Plug 'junegunn/limelight.vim' ", { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 
 " Better support for typographic quotes
 Plug 'reedes/vim-textobj-quote', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
@@ -114,6 +117,10 @@ Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown
 
 " Latex syntax, compiling etc
 Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['plaintex', 'tex'] }
+
+" Pandoc
+Plug 'vim-pandoc/vim-pandoc', { 'for': ['markdown'] }
+Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': ['markdown'] }
 
 call plug#end()
 

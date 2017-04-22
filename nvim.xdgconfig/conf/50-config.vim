@@ -8,7 +8,7 @@ endif
 
 
 " Force Markdown syntax on md files
-    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    autocmd BufNewFile,BufReadPost *.md set filetype=pandoc
 
 " Filetypes
     filetype on
