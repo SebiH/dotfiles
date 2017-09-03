@@ -47,7 +47,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Shougo/denite.nvim'
 
 " Async keyword completion
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Multiple cursors like in sublime text
 Plug 'terryma/vim-multiple-cursors'
