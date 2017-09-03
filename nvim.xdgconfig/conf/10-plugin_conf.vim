@@ -61,3 +61,9 @@
     let g:pandoc#modules#disabled = ["folding"]
     autocmd BufNewFile,BufReadPost *.md set syntax=markdown
 
+" vimtex
+    let g:vimtex_view_enabled = 0
+    let g:vimtex_compiler_enabled = 0
+    let g:vimtex_index_hide_line_numbers = 0
+
+

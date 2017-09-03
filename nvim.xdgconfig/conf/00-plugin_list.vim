@@ -116,7 +116,8 @@ Plug 'reedes/vim-wordy', { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown'], 'do': function('SetupThesaurus') }
 
 " Latex syntax, compiling etc
-Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['plaintex', 'tex'] }
+"Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['plaintex', 'tex'] }
+Plug 'lervag/vimtex', { 'for': ['plaintex', 'tex'] }
 
 " Pandoc
 "Plug 'vim-pandoc/vim-pandoc', { 'for': ['markdown'] }
