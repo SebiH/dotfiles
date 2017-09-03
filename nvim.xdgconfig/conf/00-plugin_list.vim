@@ -119,8 +119,8 @@ Plug 'ron89/thesaurus_query.vim', { 'for': ['plaintex', 'tex', 'text', 'markdown
 Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['plaintex', 'tex'] }
 
 " Pandoc
-Plug 'vim-pandoc/vim-pandoc', { 'for': ['markdown'] }
-Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': ['markdown'] }
+"Plug 'vim-pandoc/vim-pandoc', { 'for': ['markdown'] }
+"Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': ['markdown'] }
 
 call plug#end()
 

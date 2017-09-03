@@ -54,3 +54,10 @@
     let g:LatexBox_split_type="vnew"
     let g:LatexBox_split_side="topleft"
 
+" Pandoc
+    " Disable spellcheck
+    let g:pandoc#spell#enabled = 0
+    " Disable folding
+    let g:pandoc#modules#disabled = ["folding"]
+    autocmd BufNewFile,BufReadPost *.md set syntax=markdown
+
