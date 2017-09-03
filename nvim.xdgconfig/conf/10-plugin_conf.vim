@@ -47,6 +47,20 @@
     " Auto activate
     autocmd! User limelight.vim Limelight
 
+" Goyo
+    function! s:goyo_enter()
+        set background=light
+        let base16colorspace=256
+        colorscheme base16-harmonic16-light
+        set noshowmode
+        set noshowcmd
+        set linebreak
+        set wrap
+        set nu
+    endfunction
+
+    autocmd! User GoyoEnter nested call <SID>goyo_enter()
+
 " LaTeX-Box
     " Options
     let g:LatexBox_latexmk_async = 1

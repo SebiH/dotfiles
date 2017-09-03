@@ -101,6 +101,9 @@ function! SetupThesaurus(info)
 endfunction
 
 " Hide everything but text
+" White theme
+Plug 'chriskempson/base16-vim'
+
 Plug 'junegunn/goyo.vim' ", { 'for': ['plaintex', 'tex', 'text', 'markdown'] }
 
 " Fade out non-active paragraphs
