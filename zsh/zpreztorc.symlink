@@ -96,7 +96,8 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 #zstyle ':prezto:module:prompt' theme 'minimal'
-zstyle ':prezto:module:prompt' theme 'steeef'
+#zstyle ':prezto:module:prompt' theme 'steeef'
+zstyle ':prezto:module:prompt' theme 'spaceship'
 
 #
 # Ruby
