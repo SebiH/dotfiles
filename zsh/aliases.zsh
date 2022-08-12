@@ -15,7 +15,6 @@ command -v nvim >/dev/null 2>&1 && { alias vimdiff='nvim -d' }
 
 #Privileged commands
 if [ $UID -ne 0 ]; then
-    alias sudo='sudo '
 
     # Archlinux / app specific alias
     if command -v pacmatic >/dev/null 2>&1; then alias update='sudo pacmatic -Syu '; fi
