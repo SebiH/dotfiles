@@ -126,16 +126,17 @@ install_dotfiles () {
 }
 
 setup_prezto () {
-    echo "Setting up prezto"
+    info "Setting up prezto"
     rm -rf ~/.dotfiles/zsh/prezto
 
-    pushd ~/.dotfiles/
+    pushd ~/.dotfiles/ > /dev/null
     git submodule update --recursive --remote --init --quiet
-    popd
+    popd > /dev/null
 
-    pushd ~/.dotfiles/zsh/prezto
+    pushd ~/.dotfiles/zsh/prezto > /dev/null
     git clone --recurse-submodules https://github.com/belak/prezto-contrib contrib --quiet
-    popd
+    popd > /dev/null
+    success "Setting up prezto"
 }
 
 setup_gitconfig
