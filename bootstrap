@@ -149,9 +149,23 @@ setup_keys () {
     done
 }
 
+setup_prezto () {
+    echo "Setting up prezto"
+    rm -rf ~/.dotfiles/zsh/prezto
+
+    pushd ~/.dotfiles/
+    git submodule update --recursive --remote --init --quiet
+    popd
+
+    pushd ~/.dotfiles/zsh/prezto
+    git clone --recurse-submodules https://github.com/belak/prezto-contrib contrib --quiet
+    popd
+}
+
 setup_gitconfig
 install_dotfiles
 setup_keys
+setup_prezto
 
 echo ''
 echo '  All installed!'
