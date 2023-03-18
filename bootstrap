@@ -125,30 +125,6 @@ install_dotfiles () {
     done
 }
 
-setup_keys () {
-    keys=(PUSHBULLET_API SLACK_WEBHOOK SLACK_BOTNAME SLACK_BOTICON)
-
-    for key in ${keys[@]}
-    do
-        if [[ -z `cat $DOTFILES_ROOT/bin/.keys | grep $key` ]]
-        then
-            user "Please enter value for $key (or empty to skip)"
-            read keyvalue
-
-            if [[ -z $keyvalue ]]
-            then
-                success "$key skipped"
-            else
-                echo "$key=\"$keyvalue\"" >> $DOTFILES_ROOT/bin/.keys
-                success "$key installed"
-            fi
-
-        else
-            success "$key already installed, skipping"
-        fi
-    done
-}
-
 setup_prezto () {
     echo "Setting up prezto"
     rm -rf ~/.dotfiles/zsh/prezto
@@ -164,7 +140,6 @@ setup_prezto () {
 
 setup_gitconfig
 install_dotfiles
-setup_keys
 setup_prezto
 
 echo ''

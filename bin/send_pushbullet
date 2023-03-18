@@ -1,6 +1,0 @@
-#!/bin/bash
-source .keys
-title=$1
-body=$2
-curl --header "Access-Token: $PUSHBULLET_API" --header 'Content-Type: application/json' --data-binary "{\"body\":\"$body\",\"title\":\"$title\",\"type\":\"note\"}" --request POST https://api.pushbullet.com/v2/pushes > /dev/null 2>&1
-
