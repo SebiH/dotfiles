@@ -6,7 +6,7 @@
 
 " Neomake
     " active linter on save
-    autocmd! BufWritePost * Neomake
+    "autocmd! BufWritePost * Neomake
 
 " Deoplete
     " enable
