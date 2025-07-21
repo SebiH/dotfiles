@@ -137,6 +137,10 @@ setup_prezto () {
     git clone --recurse-submodules https://github.com/belak/prezto-contrib contrib --quiet
     popd > /dev/null
     success "Setting up prezto"
+
+    info "Installing starship"
+    curl -sS https://starship.rs/install.sh | sh
+    success "Installed starship"
 }
 
 setup_gitconfig
