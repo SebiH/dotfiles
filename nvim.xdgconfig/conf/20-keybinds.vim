@@ -14,7 +14,7 @@
 
     " pasting
     nnoremap <F2> :set invpaste paste?<CR>
-    set pastetoggle=<F2>
+    "set pastetoggle=<F2>
     set showmode
 
     " current date
