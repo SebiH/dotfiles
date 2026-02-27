@@ -1,0 +1,50 @@
+# Ghostty configuration
+# https://ghostty.org/docs/config
+
+# ── Font ─────────────────────────────────────────────────────────────────────
+
+font-family = FiraCode Nerd Font Mono
+font-size = 13
+
+# ── Theme ────────────────────────────────────────────────────────────────────
+
+theme = Nord
+
+# ── Cursor ───────────────────────────────────────────────────────────────────
+
+cursor-style = bar
+cursor-style-blink = false
+
+# ── Mouse ────────────────────────────────────────────────────────────────────
+
+mouse-hide-while-typing = true
+
+# ── Window ───────────────────────────────────────────────────────────────────
+
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+window-theme = dark
+
+# Transparent titlebar — Nord background bleeds into the chrome
+macos-titlebar-style = transparent
+
+# ── Behaviour ────────────────────────────────────────────────────────────────
+
+# Auto-copy selected text to clipboard (no need for a copy keybind)
+copy-on-select = clipboard
+
+# Don't nag on close
+confirm-close-surface = false
+
+# Quit fully when the last window closes (standard macOS app behaviour)
+quit-after-last-window-closed = true
+
+# Option key as Alt — needed for word-navigation (alt+left/right)
+macos-option-as-alt = true
+
+# ── Shell integration ─────────────────────────────────────────────────────────
+
+shell-integration = detect
+# Enables: jump between prompts, track working directory, better title
+
