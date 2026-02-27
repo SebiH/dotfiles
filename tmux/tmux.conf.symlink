@@ -1,65 +1,64 @@
-#set -g prefix C-a
-set -g default-terminal "screen-256color"
+#### TERMINAL
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
 
-#setw -g utf8 on
-#set -g status-utf8 on
+#### GENERAL
+set -g mouse on
+set -sg escape-time 0
+set -g history-limit 50000
+set -g base-index 1
+setw -g pane-base-index 1
+set -g renumber-windows on
+set -g focus-events on
+set -g set-clipboard on
+set -g status-interval 5
 
-#### COLOUR
+#### VI MODE
+setw -g mode-keys vi
+bind -T copy-mode-vi v   send -X begin-selection
+bind -T copy-mode-vi C-v send -X rectangle-toggle
+bind -T copy-mode-vi y   send -X copy-selection-and-cancel
 
-# default statusbar colors
-set-option -g status-bg colour235 #base02
-set-option -g status-fg colour136 #yellow
-#set-option -g status-attr default
+#### KEYBINDINGS
+bind '"' split-window -v -c "#{pane_current_path}"
+bind %   split-window -h -c "#{pane_current_path}"
+bind c   new-window      -c "#{pane_current_path}"
 
-# default window title colors
-#set-window-option -g window-status-fg colour244
-#set-window-option -g window-status-bg default
-#set-window-option -g window-status-attr dim
+bind -n M-Left  select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up    select-pane -U
+bind -n M-Down  select-pane -D
 
-# active window title colors
-#set-window-option -g window-status-current-fg colour166 #orange
-#set-window-option -g window-status-current-bg default
-#set-window-option -g window-status-current-attr bright
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
 
-# pane border
-#set-option -g pane-border-fg colour235 #base02
-#set-option -g pane-active-border-fg colour240 #base01
+bind r source-file ~/.tmux.conf \; display "Config reloaded"
 
-# message text
-#set-option -g message-bg colour235 #base02
-#set-option -g message-fg colour166 #orange
+#### THEME (Nord)
+# nordtheme.com: Polar Night #2E3440 #3B4252 #434C5E #4C566A
+#                Snow Storm   #D8DEE9 #E5E9F0 #ECEFF4
+#                Frost        #8FBCBB #88C0D0 #81A1C1 #5E81AC
+#                Aurora       #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
 
-# pane number display
-set-option -g display-panes-active-colour colour33 #blue
-set-option -g display-panes-colour colour166 #orange
+set -g status-style          "bg=#2E3440,fg=#D8DEE9"
+set -g status-left-length    30
+set -g status-right-length   60
+set -g status-left           "#[bg=#5E81AC,fg=#ECEFF4,bold] #S #[bg=#2E3440,fg=#5E81AC]  "
+set -g status-right          "#[fg=#4C566A] %Y-%m-%d  %H:%M "
 
-# clock
-set-window-option -g clock-mode-colour colour64 #green
+set -g window-status-style          "fg=#4C566A"
+set -g window-status-format         " #I:#W#{?window_zoomed_flag, Z,} "
+set -g window-status-current-style  "fg=#88C0D0,bold"
+set -g window-status-current-format " #I:#W#{?window_zoomed_flag, Z,} "
 
-# Increase scrollback buffer
-set-option -g history-limit 10000
+set -g pane-border-style         "fg=#3B4252"
+set -g pane-active-border-style  "fg=#81A1C1"
 
-# Needed to prevent weirdness in neovim.
-# https://github.com/neovim/neovim/issues/2035
-set -sg escape-time 10
+set -g message-style         "bg=#3B4252,fg=#88C0D0"
+set -g message-command-style "bg=#3B4252,fg=#EBCB8B"
 
-# Enable Vi mode
-set-window-option -g mode-keys vi
-
-# Vim tmux Navigator Smart pane switching with awareness of vim splits
-is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'
-#bind -n C-h if-shell "$is_vim" "send-keys C-h" "select-pane -L"
-#bind -n C-j if-shell "$is_vim" "send-keys C-j" "select-pane -D"
-#bind -n C-k if-shell "$is_vim" "send-keys C-k" "select-pane -U"
-#bind -n C-l if-shell "$is_vim" "send-keys C-l" "select-pane -R"
-#bind -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
-
-
-# Plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
-
+set -g display-panes-colour        "#81A1C1"
+set -g display-panes-active-colour "#88C0D0"
+setw -g clock-mode-colour          "#88C0D0"
