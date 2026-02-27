@@ -1,8 +1,7 @@
 sublime2/User/Package\ Control.sublime-settings
 sublime2/User/Package Control.last-run
 git/gitconfig.symlink
-nvim.xdgconfig/plugged
-nvim.xdgconfig/.netrwhist
+nvim.xdgconfig/lazy-lock.json
 bin/.keys
 
 *.local.*
