@@ -1,57 +1,32 @@
 #
 # Sets Prezto options.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-#
-# General
-#
-
-# Set case-sensitivity for completion, history lookup, etc.
-# zstyle ':prezto:*:*' case-sensitive 'yes'
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
 
-# Set the Zsh modules to load (man zshmodules).
-# zstyle ':prezto:load' zmodule 'attr' 'stat'
-
-# Set the Zsh functions to load (man zshcontrib).
-# zstyle ':prezto:load' zfunction 'zargs' 'zmv'
-
-# Set the Prezto modules to load (browse modules).
-# The order matters.
+# Modules to load, in order. Order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
   'history' \
-  'history-substring-search' \
   'directory' \
   'spectrum' \
   'utility' \
-  'syntax-highlighting' \
   'completion' \
-  'utility' \
+  'autosuggestions' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt' \
   'contrib-prompt'
-
-#
-# Autosuggestions
-#
-
-# Set the query found color.
-# zstyle ':prezto:module:autosuggestions:color' found ''
 
 #
 # Editor
 #
 
-# Set the key mapping style to 'emacs' or 'vi'.
+# Key binding style: emacs or vi
 zstyle ':prezto:module:editor' key-bindings 'emacs'
-
 # Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
 
@@ -59,117 +34,73 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Git
 #
 
-# Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
-# GNU Utility
+# Autosuggestions
 #
 
-# Set the command prefix on non-GNU systems.
-# zstyle ':prezto:module:gnu-utility' prefix 'g'
-
-#
-# History Substring Search
-#
-
-# Set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
-
-# Set the query not found color.
-# zstyle ':prezto:module:history-substring-search:color' not-found ''
-
-# Set the search globbing flags.
-# zstyle ':prezto:module:history-substring-search' globbing-flags ''
-
-#
-# Pacman
-#
-
-# Set the Pacman frontend.
-# zstyle ':prezto:module:pacman' frontend 'yaourt'
-
-#
-# Prompt
-#
-
-# Set the prompt theme to load.
-# Setting it to 'random' loads a random theme.
-# Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'minimal'
-#zstyle ':prezto:module:prompt' theme 'steeef'
-#zstyle ':prezto:module:prompt' theme 'spaceship'
-
-#
-# Ruby
-#
-
-# Auto switch the Ruby version on directory change.
-# zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
-
-#
-# Screen
-#
-
-# Auto start a session when Zsh is launched in a local terminal.
-# zstyle ':prezto:module:screen:auto-start' local 'yes'
-
-# Auto start a session when Zsh is launched in a SSH connection.
-# zstyle ':prezto:module:screen:auto-start' remote 'yes'
-
-#
-# SSH
-#
-
-# Set the SSH identities to load into the agent.
-# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+# Nord: nord3 (#4C566A) — dim enough to read as a ghost, visible on #2E3440
+zstyle ':prezto:module:autosuggestions:color' found 'fg=#4C566A'
 
 #
 # Syntax Highlighting
 #
 
-# Set syntax highlighters.
-# By default, only the main highlighter is enabled.
- zstyle ':prezto:module:syntax-highlighting' highlighters \
-   'main' \
-   'brackets' \
-   'pattern' \
-   'line' \
-   'cursor' \
-   'root'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets'
+
+# Nord colour scheme
+# Polar Night: #2E3440 #3B4252 #434C5E #4C566A
+# Snow Storm:  #D8DEE9 #E5E9F0 #ECEFF4
+# Frost:       #8FBCBB #88C0D0 #81A1C1 #5E81AC
+# Aurora:      #BF616A #D08770 #EBCB8B #A3BE8C #B48EAD
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'default'                        'fg=#D8DEE9' \
+  'unknown-token'                  'fg=#BF616A' \
+  'reserved-word'                  'fg=#81A1C1,bold' \
+  'alias'                          'fg=#88C0D0' \
+  'suffix-alias'                   'fg=#88C0D0' \
+  'global-alias'                   'fg=#88C0D0' \
+  'builtin'                        'fg=#81A1C1' \
+  'function'                       'fg=#88C0D0' \
+  'command'                        'fg=#88C0D0' \
+  'precommand'                     'fg=#A3BE8C,italic' \
+  'commandseparator'               'fg=#81A1C1' \
+  'autodirectory'                  'fg=#EBCB8B,italic' \
+  'path'                           'fg=#D8DEE9,underline' \
+  'path_pathseparator'             'fg=#D8DEE9' \
+  'globbing'                       'fg=#EBCB8B' \
+  'history-expansion'              'fg=#B48EAD' \
+  'single-hyphen-option'           'fg=#8FBCBB' \
+  'double-hyphen-option'           'fg=#8FBCBB' \
+  'single-quoted-argument'         'fg=#A3BE8C' \
+  'double-quoted-argument'         'fg=#A3BE8C' \
+  'dollar-quoted-argument'         'fg=#A3BE8C' \
+  'dollar-double-quoted-argument'  'fg=#EBCB8B' \
+  'back-double-quoted-argument'    'fg=#EBCB8B' \
+  'assign'                         'fg=#D8DEE9' \
+  'redirection'                    'fg=#81A1C1' \
+  'comment'                        'fg=#4C566A,italic' \
+  'arg0'                           'fg=#88C0D0'
+
 #
-# Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
+# History Substring Search
+#
+
+zstyle ':prezto:module:history-substring-search:color' found     'fg=#88C0D0,bold'
+zstyle ':prezto:module:history-substring-search:color' not-found 'fg=#BF616A,bold'
+
+#
+# Prompt
+#
+
+zstyle ':prezto:module:prompt' theme 'minimal'
 
 #
 # Terminal
 #
 
-# Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
-
-# Set the window title format.
-# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
-
-# Set the tab title format.
-# zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
-
-# Set the terminal multiplexer title format.
-# zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
-
-#
-# Tmux
-#
-
-# Auto start a session when Zsh is launched in a local terminal.
-# zstyle ':prezto:module:tmux:auto-start' local 'yes'
-
-# Auto start a session when Zsh is launched in a SSH connection.
-# zstyle ':prezto:module:tmux:auto-start' remote 'yes'
-
-# Integrate with iTerm2.
-# zstyle ':prezto:module:tmux:iterm' integrate 'yes'
-
+# Auto set tab and window titles
+zstyle ':prezto:module:terminal' auto-title 'yes'

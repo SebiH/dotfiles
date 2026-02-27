@@ -1,57 +1,26 @@
-# shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
-
-# your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:~/.local/bin
+# Machine-local config: PATH additions, secrets, NVM, conda, work tools, etc.
+# See localrc.example at the dotfiles root for a template.
+[[ -f ~/.localrc ]] && source ~/.localrc
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
-# all of our zsh files
+# Source all zsh config files: path first, then everything else, completion last
 typeset -U config_files
 config_files=($ZSH/zsh/*.zsh)
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
+for file in ${(M)config_files:#*/path.zsh};                    do source $file; done
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh};  do source $file; done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
-
-# initialize autocomplete here, otherwise functions won't be loaded
+# Init completion engine, regenerating the cache at most once per day
 autoload -Uz compinit
-if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-    compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
 else
-    compinit -C
+  compinit -C
 fi
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
-
+for file in ${(M)config_files:#*/completion.zsh}; do source $file; done
 unset config_files
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-eval "$(starship init zsh)"
-
+command -v starship >/dev/null && eval "$(starship init zsh)"

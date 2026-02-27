@@ -1,0 +1,44 @@
+# ~/.localrc — machine-specific config, NOT committed to the repo.
+# Copy this to ~/.localrc and uncomment/customise what you need.
+# Sourced early in ~/.zshrc, so PATH additions here affect everything.
+
+# ── PATH ─────────────────────────────────────────────────────────────────────
+# export PATH="$HOME/work/bin:$PATH"
+
+# ── NVM ──────────────────────────────────────────────────────────────────────
+# NVM loads slowly. Use lazy loading to defer the cost until first use.
+# Alternatively, consider fnm (brew install fnm) — same API, written in Rust,
+# ~40x faster startup.
+#
+# Option A — lazy NVM (defers load until node/npm/npx is first called):
+# export NVM_DIR="$HOME/.nvm"
+# nvm()  { unfunction nvm node npm npx; source "$NVM_DIR/nvm.sh"; nvm "$@" }
+# node() { unfunction node; source "$NVM_DIR/nvm.sh" >/dev/null; node "$@" }
+# npm()  { unfunction npm;  source "$NVM_DIR/nvm.sh" >/dev/null; npm "$@"  }
+# npx()  { unfunction npx;  source "$NVM_DIR/nvm.sh" >/dev/null; npx "$@"  }
+#
+# Option B — eager NVM (original, slow):
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ]            && source "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ]   && source "$NVM_DIR/bash_completion"
+#
+# Option C — fnm (recommended):
+# command -v fnm >/dev/null && eval "$(fnm env --use-on-cd)"
+
+# ── Conda ─────────────────────────────────────────────────────────────────────
+# __conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+# if [ $? -eq 0 ]; then
+#   eval "$__conda_setup"
+# else
+#   [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ] \
+#     && source "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" \
+#     || export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+# fi
+# unset __conda_setup
+
+# ── iTerm2 shell integration ──────────────────────────────────────────────────
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# ── Secrets / work-specific ───────────────────────────────────────────────────
+# export GITHUB_TOKEN="..."
+# export AWS_PROFILE="..."

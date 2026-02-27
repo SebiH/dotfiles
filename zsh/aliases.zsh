@@ -1,27 +1,36 @@
 alias reload!='. ~/.zshrc'
-
-#Modified commands
-#alias ls='ls --color=auto'
-alias grep='grep --color=auto'
 alias rsync='rsync --progress'
-
-#New commands
 alias ..='cd ..'
-#alias open='xdg-open'
 
-# Use neovim instead of vim, if possible
-command -v nvim >/dev/null 2>&1 && { alias vim='nvim' }
-command -v nvim >/dev/null 2>&1 && { alias vimdiff='nvim -d' }
-
-#Privileged commands
-if [ $UID -ne 0 ]; then
-
-    # Archlinux / app specific alias
-    if command -v pacmatic >/dev/null 2>&1; then alias update='sudo pacmatic -Syu '; fi
-
-    # use nivm if installed
-    if command -v nvim >/dev/null 2>&1; then alias svim='sudo -E nvim'; else alias svim='sudo -E vim'; fi
+# eza: modern ls replacement with icons and git awareness
+# brew install eza
+if command -v eza >/dev/null; then
+  alias ls='eza --icons --group-directories-first'
+  alias ll='eza -la --icons --group-directories-first --git'
+  alias lt='eza --tree --icons -L 2'
+else
+  alias grep='grep --color=auto'
 fi
 
+# bat: syntax-highlighted cat, Nord theme
+# brew install bat
+if command -v bat >/dev/null; then
+  export BAT_THEME="Nord"
+  alias cat='bat --style=plain'
+fi
 
-export LC_ALL=en_US.UTF-8
+# fd and rg are already installed; surface them explicitly
+# fd: modern find  (brew install fd)
+# rg: modern grep  (brew install ripgrep)
+
+# Neovim
+if command -v nvim >/dev/null; then
+  alias vim='nvim'
+  alias vimdiff='nvim -d'
+fi
+
+# Privileged commands
+if [[ $UID -ne 0 ]]; then
+  command -v pacmatic >/dev/null && alias update='sudo pacmatic -Syu'
+  command -v nvim     >/dev/null && alias svim='sudo -E nvim' || alias svim='sudo -E vim'
+fi
