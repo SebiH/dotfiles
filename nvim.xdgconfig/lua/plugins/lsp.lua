@@ -14,15 +14,6 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {
-          "pyright",           -- Python
-          "r_language_server", -- R (requires R + install.packages("languageserver"))
-          "marksman",          -- Markdown
-          "bashls",            -- Bash
-          "yamlls",            -- YAML
-          "lua_ls",            -- Lua
-          "jsonls",            -- JSON
-        },
         automatic_installation = true,
       })
     end,
