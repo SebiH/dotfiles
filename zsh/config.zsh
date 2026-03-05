@@ -21,6 +21,9 @@ setopt HIST_IGNORE_SPACE      # don't save commands prefixed with a space
 
 # Behaviour
 setopt AUTO_CD                # type a directory name to cd into it
+setopt AUTO_PUSHD             # cd pushes to directory stack (navigate with cd -)
+setopt PUSHD_IGNORE_DUPS      # no duplicates in the stack
+setopt PUSHD_SILENT           # don't print the stack on every cd
 setopt CORRECT                # suggest corrections for mistyped commands
 setopt COMPLETE_IN_WORD       # complete from both ends of a word
 setopt COMPLETE_ALIASES       # complete aliases
