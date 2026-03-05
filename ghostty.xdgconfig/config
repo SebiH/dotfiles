@@ -43,6 +43,10 @@ quit-after-last-window-closed = true
 # Option key as Alt — needed for word-navigation (alt+left/right)
 macos-option-as-alt = true
 
+# macos: closed the terminally too many by accident through ctrl/super+w...
+confirm-close-surface = true
+keybind = super+w=unbind
+
 # ── Shell integration ─────────────────────────────────────────────────────────
 
 shell-integration = detect

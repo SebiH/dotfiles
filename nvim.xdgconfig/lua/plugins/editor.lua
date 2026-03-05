@@ -63,7 +63,20 @@ return {
   {
     "numToStr/Comment.nvim",
     config = function()
-      require("Comment").setup()
+      require("Comment").setup({
+        toggler  = { line = "<leader>cc", block = "<leader>cs" },
+        opleader = { line = "<leader>c",  block = "<leader>b"  },
+      })
+      -- Visual mode: <leader>cc to match normal mode behaviour
+      vim.keymap.set("x", "<leader>cc", "<Plug>(comment_toggle_linewise_visual)")
+
+      -- <leader>cu — uncomment only (normal + visual)
+      local api = require("Comment.api")
+      vim.keymap.set("n", "<leader>cu", api.uncomment.linewise.current)
+      vim.keymap.set("x", "<leader>cu", function()
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<ESC>", true, false, true), "nx", false)
+        api.uncomment.linewise(vim.fn.visualmode())
+      end)
     end,
   },
 
