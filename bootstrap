@@ -125,27 +125,8 @@ install_dotfiles () {
     done
 }
 
-setup_prezto () {
-    info "Setting up prezto"
-    rm -rf ~/.dotfiles/zsh/prezto
-
-    pushd ~/.dotfiles/ > /dev/null
-    git submodule update --recursive --remote --init --quiet
-    popd > /dev/null
-
-    pushd ~/.dotfiles/zsh/prezto > /dev/null
-    git clone --recurse-submodules https://github.com/belak/prezto-contrib contrib --quiet
-    popd > /dev/null
-    success "Setting up prezto"
-
-    info "Installing starship"
-    curl -sS https://starship.rs/install.sh | sh
-    success "Installed starship"
-}
-
 setup_gitconfig
 install_dotfiles
-setup_prezto
 
 echo ''
 echo '  All installed!'
