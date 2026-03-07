@@ -125,7 +125,47 @@ install_dotfiles () {
     done
 }
 
+install_packages () {
+    info 'installing zsh packages\n'
+
+    case "$(uname -s)" in
+        Darwin)
+            if ! command -v brew >/dev/null 2>&1; then
+                fail 'Homebrew not found. Install it from https://brew.sh and re-run.'
+            fi
+            brew install pure zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
+            success 'zsh packages installed via Homebrew'
+            ;;
+        Linux)
+            if command -v apt-get >/dev/null 2>&1; then
+                # Ubuntu, Debian, Raspbian
+                sudo apt-get install -y zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
+                success 'zsh apt packages installed'
+            elif command -v pacman >/dev/null 2>&1; then
+                # Arch Linux
+                sudo pacman -S --noconfirm zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search
+                success 'zsh pacman packages installed'
+            else
+                fail 'No supported package manager found (apt-get or pacman required).'
+            fi
+
+            # pure is not in apt/pacman — clone to ~/.zsh/pure
+            local pure_dir="$HOME/.zsh/pure"
+            if [ -d "$pure_dir" ]; then
+                success "pure already present at $pure_dir"
+            else
+                git clone https://github.com/sindresorhus/pure.git "$pure_dir"
+                success "pure cloned to $pure_dir"
+            fi
+            ;;
+        *)
+            fail "Unsupported OS: $(uname -s)"
+            ;;
+    esac
+}
+
 setup_gitconfig
+install_packages
 install_dotfiles
 
 echo ''

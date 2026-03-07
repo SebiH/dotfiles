@@ -11,7 +11,8 @@
 () {
   local f
   for f in /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
-            /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; do
+            /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+            /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh; do
     [[ -f $f ]] || continue
     source $f
 
@@ -50,7 +51,8 @@
 () {
   local f
   for f in /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
-            /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh; do
+            /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
+            /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh; do
     [[ -f $f ]] || continue
     source $f
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4C566A"  # nord3 — dim ghost text
@@ -64,7 +66,8 @@
 () {
   local f
   for f in /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh \
-            /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh; do
+            /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh \
+            /usr/share/zsh-history-substring-search/zsh-history-substring-search.zsh; do
     [[ -f $f ]] || continue
     source $f
     HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=#88C0D0,bold'    # frost

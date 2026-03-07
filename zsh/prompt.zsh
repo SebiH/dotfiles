@@ -1,7 +1,12 @@
 # Pure prompt — https://github.com/sindresorhus/pure
 # brew install pure
 
-fpath+=("${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh/site-functions")
+for _pure_dir in "${HOMEBREW_PREFIX}/share/zsh/site-functions" \
+                  "/usr/local/share/zsh/site-functions" \
+                  "${HOME}/.zsh/pure"; do
+  [[ -d $_pure_dir ]] && fpath+=("$_pure_dir")
+done
+unset _pure_dir
 autoload -U promptinit
 promptinit
 prompt pure
