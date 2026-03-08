@@ -34,6 +34,10 @@ setopt LOCAL_OPTIONS
 setopt LOCAL_TRAPS
 
 # Keybindings
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
 bindkey '^[[5D'  beginning-of-line
