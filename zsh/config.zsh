@@ -38,8 +38,10 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
+bindkey '^[^[[D'  backward-word   # Alt+Left  (macOS/old xterm)
+bindkey '^[^[[C'  forward-word    # Alt+Right (macOS/old xterm)
+bindkey '^[[1;3D' backward-word   # Alt+Left  (Windows Terminal / modern SSH)
+bindkey '^[[1;3C' forward-word    # Alt+Right (Windows Terminal / modern SSH)
 bindkey '^[[5D'  beginning-of-line
 bindkey '^[[5C'  end-of-line
 bindkey '^[[3~'  delete-char
