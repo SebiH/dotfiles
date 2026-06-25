@@ -34,6 +34,10 @@ setopt LOCAL_OPTIONS
 setopt LOCAL_TRAPS
 
 # Keybindings
+# Force emacs mode: zsh otherwise auto-selects vi keys because $EDITOR=nvim
+# contains "vi", which breaks ^R reverse-search and other emacs shortcuts.
+bindkey -e
+
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
