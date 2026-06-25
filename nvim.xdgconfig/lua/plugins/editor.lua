@@ -49,15 +49,26 @@ return {
   {
     "karb94/neoscroll.nvim",
     config = function()
-      require("neoscroll").setup({
+      local neoscroll = require("neoscroll")
+      neoscroll.setup({
         mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
         hide_cursor = true,
         easing = "sine",
       })
+      -- Smooth scroll up a full page (mirror of <C-f>), like the built-in <C-b>
+      vim.keymap.set({ "n", "v", "x" }, "<C-g>", function()
+        neoscroll.ctrl_b({ duration = 450 })
+      end, { silent = true, desc = "Smooth scroll up (page)" })
     end,
   },
 
-  { "mg979/vim-visual-multi" },
+  {
+    "mg979/vim-visual-multi",
+    init = function()
+      -- Don't warn when VM overwrites mappings other plugins set (e.g. autopairs' <BS>)
+      vim.g.VM_show_warnings = 0
+    end,
+  },
   { "godlygeek/tabular" },
 
   {

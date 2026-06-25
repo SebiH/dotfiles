@@ -68,6 +68,7 @@ return {
         "yamlls",
         "lua_ls",
         "jsonls",
+        "ts_ls", -- JavaScript / TypeScript / JSX / TSX
       })
 
       vim.diagnostic.config({
