@@ -1,5 +1,6 @@
 git/gitconfig.symlink
 nvim.xdgconfig/lazy-lock.json
+fish.xdgconfig/fish_variables
 bin/.keys
 
 *.local.*
